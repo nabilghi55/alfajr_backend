@@ -39,36 +39,42 @@
         <!-- MENU -->
         <nav class="space-y-2">
 
-            <a href="/dashboard"
-                class="flex items-center gap-3 p-3 rounded-lg transition
+            <a href="/dashboard" class="flex items-center gap-3 p-3 rounded-lg transition
                        {{ request()->is('dashboard') ? 'bg-orange-800' : 'hover:bg-gray-700' }}">
                 <span class="material-icons">dashboard</span>
                 <span>Dashboard</span>
             </a>
 
-            <a href="{{ route('paket.index') }}"
-                class="flex items-center gap-3 p-3 rounded-lg transition
+            <a href="{{ route('paket.index') }}" class="flex items-center gap-3 p-3 rounded-lg transition
                        {{ request()->is('paket*') ? 'bg-orange-800' : 'hover:bg-gray-700' }}">
                 <span class="material-icons">holiday_village</span>
                 <span>Paket Umroh</span>
             </a>
-            <a href="{{ route('marketing.index') }}"
-                class="flex items-center gap-3 p-3 rounded-lg transition
+
+            <a href="{{ route('marketing.index') }}" class="flex items-center gap-3 p-3 rounded-lg transition
           {{ request()->is('marketing*') ? 'bg-gray-800 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
                 <span class="material-icons">phone_in_talk</span>
                 <span>Nomor Marketing</span>
             </a>
-
-
-            <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition">
-                <span class="material-icons">person</span>
-                <span>Users</span>
+            <a href="{{ route('testimoni.index') }}" class="flex items-center gap-3 p-3 rounded-lg transition
+                       {{ request()->is('testimoni*') ? 'bg-orange-800' : 'hover:bg-gray-700' }}">
+                <span class="material-icons">auto_awesome</span>
+                <span>Testimoni</span>
+            </a>
+            <a href="{{ route('faq.index') }}" class="flex items-center gap-3 p-3 rounded-lg transition
+                       {{ request()->is('faq*') ? 'bg-orange-800' : 'hover:bg-gray-700' }}">
+                <span class="material-icons">help_center</span>
+                <span>FAQ</span>
+            </a>
+            <a href="{{ route('banner.index') }}" class="flex items-center gap-3 p-3 rounded-lg transition
+                       {{ request()->is('banner*') ? 'bg-orange-800' : 'hover:bg-gray-700' }}">
+                <span class="material-icons">image</span>
+                <span>Banner</span>
             </a>
 
-            <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition">
-                <span class="material-icons">settings</span>
-                <span>Settings</span>
-            </a>
+
+
+
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
