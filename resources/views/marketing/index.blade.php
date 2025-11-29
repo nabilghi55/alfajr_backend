@@ -95,7 +95,7 @@
                                     </span>
                                 @else
                                     <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-500 border border-gray-200">
-                                        In Queue
+                                        Inactive
                                     </span>
                                 @endif
                             </td>
