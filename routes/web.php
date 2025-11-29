@@ -6,6 +6,7 @@ use App\Http\Controllers\MarketingNumberController;
 use App\Http\Controllers\PaketUmrohController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,9 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified']) // Pastikan hanya user login yang bisa akses
+    ->name('dashboard');
 
 
 

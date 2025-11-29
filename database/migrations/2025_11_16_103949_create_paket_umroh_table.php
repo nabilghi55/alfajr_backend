@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('judul');
             $table->string('kategori')->nullable(); // Bronze, Silver, Gold
-            $table->integer('harga');
             $table->string('maskapai')->nullable();
             $table->string('durasi')->nullable(); // contoh: 9 Hari
             $table->text('deskripsi')->nullable();
