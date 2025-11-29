@@ -10,7 +10,7 @@
         <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
             <div class="relative z-10">
                 <h2 class="text-2xl font-bold">Selamat Datang, {{ auth()->user()->name ?? 'Admin' }}! 👋</h2>
-                <p class="mt-1 text-blue-100 opacity-90">Berikut adalah ringkasan performa website <span class="font-semibold text-white">alfajrumroh.com</span> hari ini.</p>
+                <p class="mt-1 text-blue-100 opacity-90">Berikut adalah ringkasan performa website <span class="font-semibold text-white">alfajrumroh.co.id</span> hari ini.</p>
                 
                 <div class="mt-6 flex gap-4">
                     <a href="{{ url('https://alfajrumroh.co.id') }}" target="_blank" class="px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-sm font-semibold transition flex items-center">
