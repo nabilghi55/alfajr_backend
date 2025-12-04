@@ -178,4 +178,38 @@ class PaketUmrohController extends Controller
 
         return redirect()->route('paket.index')->with('success', 'Paket berhasil dihapus!');
     }
+    public function apiIndex()
+    {
+        $pakets = PaketUmroh::latest()->get()->map(function ($p) {
+            $p->gambar_url = $p->gambar ? asset('storage/' . $p->gambar) : null;
+            $p->itinerary_url = $p->itinerary ? asset('storage/' . $p->itinerary) : null;
+            return $p;
+        });
+
+        return response()->json([
+            'status' => true,
+            'data' => $pakets
+        ]);
+    }
+    public function apiShow($id)
+    {
+        $paket = PaketUmroh::find($id);
+
+        if (!$paket) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Paket tidak ditemukan'
+            ], 404);
+        }
+
+        $paket->gambar_url = $paket->gambar ? asset('storage/' . $paket->gambar) : null;
+        $paket->itinerary_url = $paket->itinerary ? asset('storage/' . $paket->itinerary) : null;
+
+        return response()->json([
+            'status' => true,
+            'data' => $paket
+        ]);
+    }
+
+
 }

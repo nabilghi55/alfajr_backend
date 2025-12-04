@@ -14,7 +14,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/getpaket', [PaketUmrohController::class, 'getPaket']);
+Route::get('/paket', [PaketUmrohController::class, 'apiIndex']);
+Route::get('/paket/{id}', [PaketUmrohController::class, 'apiShow']);
 Route::get('/marketing-numbers', [MarketingNumberController::class, 'apiIndex']);
 Route::get('/marketing-numbers/{id}', [MarketingNumberController::class, 'apiShow']);
 Route::get('/marketing-current', [MarketingNumberController::class, 'apiCurrent']);
