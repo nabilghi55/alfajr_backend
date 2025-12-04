@@ -36,6 +36,7 @@ class FaqController extends Controller
 
         return back()->with('success', 'FAQ berhasil dihapus!');
     }
+
     public function getFaq()
     {
         return response()->json([
